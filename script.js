@@ -1,41 +1,26 @@
-//dom events
-const resultEl =document.getElementById('result');
-const lengthEl =document.getElementById('length');
-const generateEl =document.getElementById('generate');
 
- //Random Number Generate
- 
-    let getRandomNumber = function(start, range) {
+
+//Random Number Generate
+let getRandomNumber = function(start, range) {
     let getRandom = Math.floor((Math.random() * range) +
 start);
 document.getElementById('generateking').value=getRandom
-
-    
-        while ( getRandom > range) {
+    while ( getRandom > range) {
         getRandom = Math.floor((Math.random() * range) +
         start);
         document.getElementById('generateking').value=getRandom
     }
 
         return getRandom;
-    
     }
-    console.log(getRandomNumber(1000, 10000));
-    generateEl.addEventListener('click' , () => {
-        const length = lengthEl.value;
-        console.log(length);
-        });
-    //generate passward
-    function generate (number,length){
-        let generate = '';
-        const typesCount = number;
-        console.log('typesCount: ',typesCount);
-    }
+    console.log(getRandomNumber(5000, 10000));
+
+
 
 //Input Numbers in Display
-inputDisplay=document.getElementById('display');
+ let inputDisplay=document.getElementById('display');
 function display(num){
-    inputDisplay.value+=num;
+inputDisplay.value+=num;
 }
 
 
@@ -52,7 +37,7 @@ let backSpace=document.getElementById('backspace').addEventListener('click',func
 
 
 //Pin Matcher
-submitBtn=document.getElementById('submit').addEventListener('click',function(){
+  submitBtn=document.getElementById('submit').addEventListener('click',function(){
     generateValue=document.getElementById('generateKing').value;
     inputValue=document.getElementById('display').value;
     if(generateValue==inputValue){
@@ -63,11 +48,11 @@ submitBtn=document.getElementById('submit').addEventListener('click',function(){
         decreaseBtn=document.getElementById('tryleft').innerHTML;
         decreaseNum=parseInt(decreaseBtn);
         decreaseBtnNew=decreaseNum-1;
-        document.getElementById('tryleft').innerHTML=decreaseBtnNew;
+       document.getElementById('tryleft').innerHTML=decreaseBtnNew;
 
     }
     
 
-    document.getElementById('display').value='';
+     document.getElementById('display').value='';
 
 })
