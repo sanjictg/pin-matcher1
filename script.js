@@ -1,12 +1,36 @@
-//Random Number Generate
-document.getElementById('right').style.display='none';
-document.getElementById('wrong').style.display = "none";
-    let generateBtn=document.getElementById('generate').addEventListener('click',function(){
-    let generateResult=document.getElementById('generateKing');
-    let generateRandom=Math.floor(Math.random()*9000+1000);
-    document.getElementById('generateKing').value=generateRandom;
+//dom events
+const resultEl =document.getElementById('result');
+const lengthEl =document.getElementById('length');
+const generateEl =document.getElementById('generate');
 
-})
+ //Random Number Generate
+ 
+    let getRandomNumber = function(start, range) {
+    let getRandom = Math.floor((Math.random() * range) +
+start);
+document.getElementById('generateking').value=getRandom
+
+    
+        while ( getRandom > range) {
+        getRandom = Math.floor((Math.random() * range) +
+        start);
+        document.getElementById('generateking').value=getRandom
+    }
+
+        return getRandom;
+    
+    }
+    console.log(getRandomNumber(1000, 10000));
+    generateEl.addEventListener('click' , () => {
+        const length = lengthEl.value;
+        console.log(length);
+        });
+    //generate passward
+    function generate (number,length){
+        let generate = '';
+        const typesCount = number;
+        console.log('typesCount: ',typesCount);
+    }
 
 //Input Numbers in Display
 inputDisplay=document.getElementById('display');
@@ -42,6 +66,7 @@ submitBtn=document.getElementById('submit').addEventListener('click',function(){
         document.getElementById('tryleft').innerHTML=decreaseBtnNew;
 
     }
+    
 
     document.getElementById('display').value='';
 
